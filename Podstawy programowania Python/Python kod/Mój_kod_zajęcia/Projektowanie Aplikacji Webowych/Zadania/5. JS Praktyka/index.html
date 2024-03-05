@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts.js"></script>
+    <style>
+        #user-form {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .error {
+            font-size: 0.8em;
+            color: red;
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            width: 700px;
+        }
+
+        label {
+            margin-left: 10px;
+        }
+
+        input {
+            margin-left: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Formularz pracowników</h1>
+<form id="user-form" method="post" action="/">
+    <div>
+        <label for="user">Imię i nazwisko pracownika</label>
+        <input id="user">
+    </div>
+    <span id="user-error" class="error"  hidden>Nazwa pracownika powinna mieć długość min. 3 znaki</span>
+    <button id="add-user">Dodaj</button>
+    <p id="add"></p>
+
+</form>
+
+</body>
+</html>

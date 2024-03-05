@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts.js"></script>
+    <style>
+        #user-form{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .error {
+            font-size: 0.8em;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form id="user-form" method="post" action="/">
+    <label for="email">Email</label>
+    <input id="email" type="email">
+    <span id="email-error" class="error" hidden>Adres email powinien mieć min. 5 znaków</span>
+
+    <label for="password">Hasło</label>
+    <input id="password" type="password">
+    <span id="password-error" class="error" hidden>Hasło powinno miec min. 8 znaków</span>
+
+    <button>Dodaj</button>
+</form>
+
+</body>
+</html>

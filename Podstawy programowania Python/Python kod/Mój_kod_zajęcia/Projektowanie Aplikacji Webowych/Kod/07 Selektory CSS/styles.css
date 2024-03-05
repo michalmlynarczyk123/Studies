@@ -1,0 +1,55 @@
+/*Wszystkie elementy*/
+/*
+* {
+    border: 3px solid green;
+}
+ */
+
+/*selektor typu */
+/*
+div {
+    border: 3px solid green;
+}
+
+ */
+
+/*selektor klasy*/
+/*
+.boxes {
+    border: 3px solid green
+}
+*/
+
+/*selektor identyfikatora*/
+/*
+#box-one {
+    border: 3px solid green;
+}
+*/
+
+/*selektor elementu dziecka*/
+/*
+#big-box > div {
+    border: 3px solid green;
+}
+*/
+
+/*selektor elementu potomnego*/
+/*
+#big-box div {
+    border: 3px solid green;
+}
+*/
+
+/*Selektor elementu sąsiadującego bezpośrednio.*/
+/*
+#box-two + div {
+    border: 3px solid green;
+}
+*/
+
+/*Selektor elementu sąsiadującego*/
+
+#box-two ~ div {
+    border: 3px solid green;
+}

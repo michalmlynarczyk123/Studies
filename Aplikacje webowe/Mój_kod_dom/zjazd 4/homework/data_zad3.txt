@@ -1,0 +1,10 @@
+2024-02-15 18:15:32
+Twoje liczby: [1, 2, 3, 4, 5, 6]
+Wylosowane liczby: [14, 18, 19, 25, 41, 44]
+Liczba trafieñ: 0
+
+2024-02-15 18:16:42
+Twoje liczby: [4, 8, 15, 16, 23, 42, 48, 49]
+Wylosowane liczby: [4, 7, 12, 19, 43, 45]
+Liczba trafieñ: 1
+
