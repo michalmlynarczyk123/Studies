@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 password = os.environ.get('DATABASE_PASSWORD')
-user = 'chudzick'
-database_name = 'chudzick'
+user = 'mimlynar'
+database_name = 'mimlynar'
 server = 'morfeusz.wszib.edu.pl'
 
 connection_string = (

@@ -9,5 +9,6 @@
     <file url="file://$PROJECT_DIR$/Obsługa baz danych/Zadania SQL/SQL_1_Zadania.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/Obsługa baz danych/Zadania SQL/SQL_2_Zadania.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/Obsługa baz danych/Zadania SQL/SQL_3_Zadania.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/Obsługa baz danych/db/db.py" dialect="GenericSQL" />
   </component>
 </project>
