@@ -15,9 +15,10 @@ engine = create_engine(
 )
 db = engine.connect()
 
-results = db.execute(text('SELECT * FROM employees'))
-print(results.fetchall())
+if __name__ == '__main__':
+    results = db.execute(text('SELECT * FROM employees'))
+    print(results.fetchall())
 
-query = text('SELECT * FROM employees WHERE pesel=:pesel')
-results = db.execute(query, {'pesel': '80070298761'})
-print(results.fetchall())
+    query = text('SELECT * FROM employees WHERE pesel=:pesel')
+    results = db.execute(query, {'pesel': '80070298761'})
+    print(results.fetchall())
