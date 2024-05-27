@@ -17,7 +17,10 @@ def add_card(category_id):
     term = request_body['term']
     definition = request_body['definition']
 
-    return jsonify(create_card(category_id, term, definition)), 201
+    try:
+        return jsonify(create_card(category_id, term, definition)), 201
+    except exc.IntegrityError:
+        return '', 404
 
 
 @app.route('/categories/<int:category_id>/cards/<card_id>', methods=['DELETE'])
