@@ -28,3 +28,12 @@ def delete_category(category_id: int):
 
 def get_cards(category_id: int) -> list[Card]:
     return db.session.execute(db.select(Card).filter_by(category_id=category_id)).scalars().all()
+
+
+def create_card(category_id: int, term: str, definition: str) -> Card:
+    card = Card(category_id=category_id, term=term, definition=definition)
+
+    db.session.add(card)
+    db.session.commit()
+
+    return card

@@ -8,3 +8,13 @@ from memoryapp.repository import *
 @app.route('/categories/<int:category_id>/cards', methods=['GET'])
 def cards(category_id):
     return jsonify(get_cards(category_id))
+
+
+@app.route('/categories/<int:category_id>/cards', methods=['POST'])
+def add_card(category_id):
+    request_body = request.json
+
+    term = request_body['term']
+    definition = request_body['definition']
+
+    return jsonify(create_card(category_id, term, definition)), 201
