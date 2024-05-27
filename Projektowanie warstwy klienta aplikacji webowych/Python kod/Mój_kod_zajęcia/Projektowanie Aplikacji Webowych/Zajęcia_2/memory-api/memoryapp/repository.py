@@ -1,4 +1,4 @@
-from memoryapp.entities import Category
+from memoryapp.entities import Category, Card
 from memoryapp import db
 
 
@@ -24,3 +24,7 @@ def delete_category(category_id: int):
 
     db.session.delete(category)
     db.session.commit()
+
+
+def get_cards(category_id: int) -> list[Card]:
+    return db.session.execute(db.select(Card).filter_by(category_id=category_id)).scalars().all()
