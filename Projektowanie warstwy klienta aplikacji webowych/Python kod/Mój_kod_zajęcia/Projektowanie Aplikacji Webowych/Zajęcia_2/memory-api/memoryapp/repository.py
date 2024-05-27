@@ -37,3 +37,10 @@ def create_card(category_id: int, term: str, definition: str) -> Card:
     db.session.commit()
 
     return card
+
+
+def delete_card(category_id: int, card_id: int):
+    card = db.one_or_404(db.select(Card).filter_by(id=card_id, category_id=category_id))
+
+    db.session.delete(card)
+    db.session.commit()
