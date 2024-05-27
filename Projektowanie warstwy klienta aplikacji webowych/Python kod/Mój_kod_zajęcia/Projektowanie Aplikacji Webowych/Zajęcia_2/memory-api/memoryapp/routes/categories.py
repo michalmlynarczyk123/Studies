@@ -6,6 +6,10 @@ from memoryapp.repository import *
 def categories():
     return jsonify(get_categories())
 
+@app.route('/categories/<int:category_id>', methods=['GET'])
+def get_category(category_id):
+    return jsonify(get_category_by_id(category_id))
+
 @app.route('/categories', methods=['POST'])
 def add_category():
     r = request.json
