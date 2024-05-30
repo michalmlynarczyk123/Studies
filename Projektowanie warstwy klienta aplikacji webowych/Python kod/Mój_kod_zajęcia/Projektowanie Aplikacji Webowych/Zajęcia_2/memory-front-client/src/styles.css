@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rotate-y-180 {
+  @apply [transform:rotateY(180deg)]
+}
+
+.rotate-y-0 {
+  @apply [transform:rotateY(0deg)]
+}
+
+ng-icon {
+  @apply cursor-pointer
+}
+
+input {
+  @apply w-full py-1 px-3 rounded
+}
+
+button {
+  @apply flex gap-1 items-center
+}
+
+.white-list-item {
+  @apply bg-white py-1 px-3 w-full rounded
+}
