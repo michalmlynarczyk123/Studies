@@ -4,25 +4,25 @@
 @tailwind utilities;
 
 .rotate-y-180 {
-  @apply [transform:rotateY(180deg)]
+  @apply [transform:rotateY(180deg)];
 }
 
 .rotate-y-0 {
-  @apply [transform:rotateY(0deg)]
+  @apply [transform:rotateY(0deg)];
 }
 
 ng-icon {
-  @apply cursor-pointer
+  @apply cursor-pointer;
 }
 
 input {
-  @apply w-full py-1 px-3 rounded
+  @apply w-full rounded px-3 py-1;
 }
 
 button {
-  @apply flex gap-1 items-center
+  @apply flex items-center gap-1;
 }
 
 .white-list-item {
-  @apply bg-white py-1 px-3 w-full rounded
+  @apply w-full rounded bg-white px-3 py-1;
 }
