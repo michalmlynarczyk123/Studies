@@ -4,11 +4,20 @@ import { RouterLink } from '@angular/router';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { StoreService } from '../../store.service';
+import { BackLinkComponent } from '../../back-link/back-link.component';
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [NgIcon, RouterLink, NgForOf, NgIf, FormsModule, AsyncPipe],
+  imports: [
+    NgIcon,
+    RouterLink,
+    NgForOf,
+    NgIf,
+    FormsModule,
+    AsyncPipe,
+    BackLinkComponent,
+  ],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css',
 })
