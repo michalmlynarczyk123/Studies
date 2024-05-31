@@ -22,14 +22,11 @@
     </div>
   </div>
 
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2" *ngIf="categories$ | async as categories">
     <ng-container *ngIf="categories.length; else noContent">
-      <div
-        class="flex cursor-pointer gap-4"
-        *ngFor="let c of categories; let i = index"
-      >
-        <div class="white-list-item">{{ c }}</div>
-        <button (click)="removeCategory(i)">
+      <div class="flex cursor-pointer gap-4" *ngFor="let c of categories">
+        <div class="white-list-item">{{ c.name }}</div>
+        <button (click)="removeCategory(c.id)">
           <ng-icon name="heroNoSymbol"></ng-icon>
         </button>
       </div>
