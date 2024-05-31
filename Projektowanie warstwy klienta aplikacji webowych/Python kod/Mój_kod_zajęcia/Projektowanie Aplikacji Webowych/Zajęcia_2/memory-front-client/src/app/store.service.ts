@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { BehaviorSubject } from 'rxjs';
-import { Category } from './models';
+import { Card, Category } from './models';
 
 @Injectable({
   providedIn: 'root',
@@ -9,8 +9,10 @@ import { Category } from './models';
 export class StoreService {
   private readonly apiService: ApiService = inject(ApiService);
   private _categories = new BehaviorSubject<Category[]>([]);
+  private _cards = new BehaviorSubject<Card[]>([]);
 
   categories$ = this._categories.asObservable();
+  cards$ = this._cards.asObservable();
 
   fetchCategories() {
     this.apiService
@@ -34,5 +36,19 @@ export class StoreService {
       );
       this._categories.next(filterCategories);
     });
+  }
+
+  fetchCards(categoryId: number) {
+    this.apiService.getCards(categoryId).subscribe(cards => this._cards.next(cards))
+  }
+
+  deleteCard(categoryId: number, cardId: number) {
+    this.apiService.deleteCard(categoryId, cardId).subscribe(
+      () => {
+        let cards = this._cards.value;
+        let filteredCards = cards.filter(card => card.id !== cardId);
+        this._cards.next(filteredCards)
+      }
+    )
   }
 }

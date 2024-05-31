@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Category } from './models';
+import { Card, Category } from './models';
 import { Observable } from 'rxjs';
 import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
@@ -24,5 +24,13 @@ export class ApiService {
 
   deleteCategory(categoryId: number): Observable<any> {
     return this.httpClient.delete(`${BASE_URL}/categories/${categoryId}`);
+  }
+
+  getCards(categoryId: number): Observable<Card[]> {
+    return this.httpClient.get<Card[]>(`${BASE_URL}/categories/${categoryId}/cards`);
+  }
+
+  deleteCard(categoryId: number, cardId: number): Observable<any> {
+    return this.httpClient.delete(`${BASE_URL}/categories/${categoryId}/cards/${cardId}`);
   }
 }

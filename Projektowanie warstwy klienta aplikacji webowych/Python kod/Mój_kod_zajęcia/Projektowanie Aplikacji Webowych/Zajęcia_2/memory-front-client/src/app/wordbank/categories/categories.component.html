@@ -1,35 +1,35 @@
-<div class="flex flex-col gap-4">
+<div class='flex flex-col gap-4'>
   <app-back-link></app-back-link>
 
-  <div class="flex justify-between">
-    <div class="font-bold">Kategorie</div>
-    <button (click)="showNewCategoryInput = true">
-      <ng-icon name="heroPlusCircle"></ng-icon>
+  <div class='flex justify-between'>
+    <div class='font-bold'>Kategorie</div>
+    <button (click)='showNewCategoryInput = true'>
+      <ng-icon name='heroPlusCircle'></ng-icon>
       <span>Dodaj</span>
     </button>
   </div>
 
-  <div class="flex flex-col" *ngIf="showNewCategoryInput">
-    <label class="text-sm">Nazwa</label>
-    <div class="flex items-center gap-4">
-      <input [(ngModel)]="newCategoryName" type="text" />
-      <button (click)="addCategory()" *ngIf="newCategoryName.length">
-        <ng-icon name="heroCheckCircle"></ng-icon>
+  <div class='flex flex-col' *ngIf='showNewCategoryInput'>
+    <label class='text-sm'>Nazwa</label>
+    <div class='flex items-center gap-4'>
+      <input [(ngModel)]='newCategoryName' type='text' />
+      <button (click)='addCategory()' *ngIf='newCategoryName.length'>
+        <ng-icon name='heroCheckCircle'></ng-icon>
       </button>
     </div>
   </div>
 
-  <div class="flex flex-col gap-2" *ngIf="categories$ | async as categories">
-    <ng-container *ngIf="categories.length; else noContent">
-      <div class="flex cursor-pointer gap-4" *ngFor="let c of categories">
-        <div class="white-list-item">{{ c.name }}</div>
-        <button (click)="removeCategory(c.id)">
-          <ng-icon name="heroNoSymbol"></ng-icon>
+  <div class='flex flex-col gap-2' *ngIf='categories$ | async as categories'>
+    <ng-container *ngIf='categories.length; else noContent'>
+      <div class='flex cursor-pointer gap-4' *ngFor='let c of categories'>
+        <div class='white-list-item' [routerLink]="[c.id, 'cards']">{{ c.name }}</div>
+        <button (click)='removeCategory(c.id)'>
+          <ng-icon name='heroNoSymbol'></ng-icon>
         </button>
       </div>
     </ng-container>
     <ng-template #noContent>
-      <div class="text-center">Nie posiadasz żadnej kategorii</div>
+      <div class='text-center'>Nie posiadasz żadnej kategorii</div>
     </ng-template>
   </div>
 </div>
