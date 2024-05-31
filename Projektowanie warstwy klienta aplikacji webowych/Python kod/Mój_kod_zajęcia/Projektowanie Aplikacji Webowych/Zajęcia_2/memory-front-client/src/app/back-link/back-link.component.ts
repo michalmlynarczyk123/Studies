@@ -1,8 +1,9 @@
-import { Component, input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { NgIcon } from '@ng-icons/core';
 import { RouterLink } from '@angular/router';
-import { Input } from 'postcss';
 
+
+// @ts-ignore
 @Component({
   selector: 'app-back-link',
   standalone: true,
