@@ -144,4 +144,4 @@ JOIN Purchasing.ProductVendor AS pv
 ON p.ProductID = pv.ProductID
 JOIN Purchasing.Vendor AS v
 ON pv.BusinessEntityID = v.BusinessEntityID
-WHERE p.ListPrice > 25
+WHERE p.ListPrice > 25 order by p.ListPrice desc

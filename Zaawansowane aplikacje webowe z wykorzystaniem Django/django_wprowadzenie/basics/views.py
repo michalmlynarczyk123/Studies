@@ -8,7 +8,7 @@ from .models import find_by_name
 # Create your views here.
 
 def hello_world(request):
-    return HttpResponse('Witaj świecie z Django')
+    return HttpResponse('Witaj świecie z Django!')
 
 
 def current_date(request):
@@ -21,12 +21,12 @@ counter = 0
 def view_hits(request):
     global counter
     counter += 1
-    return HttpResponse(f'Ten widok został wywołany {++counter} razy')
+    return HttpResponse(f'Ten widok został wywołany {counter} razy')
 
 
 def find_country_by_name(request, country_name):
     found_country = find_by_name(country_name)
     if found_country is None:
-        return HttpResponseNotFound(f'Kraj {country_name} nie został znaleziony!')
+        return HttpResponseNotFound(f'Kraj {country_name} nie został znaleziony')
 
     return HttpResponse(f'{found_country["country"]} {found_country["capital"]}')

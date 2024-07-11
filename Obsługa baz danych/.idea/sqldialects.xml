@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Teoria/1_Podstawy.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/Teoria/2_Joiny_teoria.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/Teoria/3_Joiny.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/Teoria/4_Grupowanie.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/Teoria/5_Inserty_Usuwanie_Tabeli.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/Zadania SQL/SQL_1_Zadania.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/Zadania SQL/SQL_2_Zadania.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/Zadania SQL/SQL_3_Zadania.sql" dialect="TSQL" />
+  </component>
+</project>
