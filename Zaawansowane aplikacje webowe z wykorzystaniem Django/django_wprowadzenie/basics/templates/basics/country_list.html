@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista krajów</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block page_title %}
+    Lista krajów
+{% endblock %}
+
+{% block page_content %}
     <h2>List {{ country_count }} krajów</h2>
     <hr>
     <ul>
         {% for country in countries %}
-            <li><a href="{% url 'country_by_name_url' country_name=country.country %}">
-                {{ country.country }}
-            </a></li>
+            <li>
+                <a href="{% url 'country_by_name_url' country_name=country.country %}">
+                    {{ country.country }}
+                </a>
+            </li>
         {% empty %}
             <h1>Lista krajów jest pusta!</h1>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

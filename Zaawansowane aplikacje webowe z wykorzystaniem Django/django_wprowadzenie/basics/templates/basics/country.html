@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Kraj</title>
-</head>
-<body>
-<div>Kraj: {{ country.country|upper }}</div>
-{% if country.capital is not None %}
-    <div>Stolica: {{ country.capital }}</div>
-{% else %}
-    <div style="color: red">Kraj nie posiada stolicy</div>
-{% endif %} 
-<div>Stolica: {{ country.capital }}</div>
-<div>Kod: {{ country.cc|lower }}</div>
-<div>Numer kierunkowy: {{ country.iac }}</div>
-<div>Strefa czasowa: {{ country.timezone }}</div>
-<div>Waluta: {{ country.currency }}</div>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'basic_app.css' %}">
+{% endblock %}
+
+{% block page_content %}
+    <div>Kraj: {{ country.country|upper }}</div>
+    {% if country.capital is not None %}
+        <div>Stolica: {{ country.capital }}</div>
+    {% else %}
+        <div class="error">Kraj nie posiada stolicy</div>
+    {% endif %}
+    <div>Kod: {{ country.cc|lower }}</div>
+    <div>Numer kierunkowy: {{ country.iac }}</div>
+    <div>Strefa czasowa: {{ country.timezone }}</div>
+    <div>Waluta: {{ country.currency }}</div>
+{% endblock %}
