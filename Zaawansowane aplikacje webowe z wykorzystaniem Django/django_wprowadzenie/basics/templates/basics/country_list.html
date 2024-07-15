@@ -9,7 +9,11 @@
     <hr>
     <ul>
         {% for country in countries %}
-            <li>{{ country.country }}</li>
+            <li><a href="{% url 'country_by_name_url' country_name=country.country %}">
+                {{ country.country }}
+            </a></li>
+        {% empty %}
+            <h1>Lista krajów jest pusta!</h1>
         {% endfor %}
     </ul>
 </body>
