@@ -31,18 +31,28 @@ def find_country_by_name(request, country_name):
     if found_country is None:
         return HttpResponseNotFound(f'Kraj {country_name} nie został znaleziony')
 
-    return HttpResponse(f'{found_country["country"]} {found_country["capital"]}')
+    return render(request, 'basics/country.html', {
+        'country': found_country
+    })
 
 
 def find_country_by_index(request, country_index):
     try:
         found_country = all_countries[country_index]
         redirect_path = reverse('country_by_name_url', args=[found_country["country"]])
-        # return HttpResponse(f'{found_country["country"]} {found_country["capital"]}')
-        print(redirect_path)
+        # return HttpResponse(f'{found_country["country"]} {found_country["capital"]}'
+        # print(redirect_path)
         return HttpResponseRedirect(redirect_path)
     except:
         return HttpResponseNotFound(f'Kraj o indeksie {country_index} nie został znaleziony')
+
+
+def country_list(request, country_count):
+    found_countries = all_countries[:country_count]
+    return render(request, 'basics/country_list.html', {
+        'countries': found_countries,
+        'country_count': country_count
+    })
 
 
 def first_html(request):
@@ -63,6 +73,4 @@ def first_html(request):
 
 
 def first_template(request):
-    response_data = render_to_string('basics/first_template.html')
-    print(response_data)
-    return HttpResponse(response_data)
+    return render(request, 'basics/first_template.html')
