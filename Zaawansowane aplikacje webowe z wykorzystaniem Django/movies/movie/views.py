@@ -1,24 +1,27 @@
 from django.shortcuts import render
 from .models import Movie
 from django.http import HttpResponseNotFound
+from django.db.models import Avg, Min, Max, Count
 
 
 # Create your views here.
 
 def all_movies(request):
-    found_movies = Movie.find_all_movies()
+    found_movies = Movie.objects.all()
+    found_movies_aggregation = found_movies.aggregate(Avg('vote_average'), Min('vote_average'), Max('vote_average'),
+                                                      Count('id'))
     context = {
-        'movies': found_movies
+        'movies': found_movies,
+        'aggregation_data': found_movies_aggregation
     }
     return render(request, 'movie/all_movies.html', context)
 
 
-def movie_details(request, tmdb_id):
-    found_movie = Movie.find_all_movies()
-    for m in found_movie:
-        if m.tmdb_id == tmdb_id:
-            context = {
-                'movie': m
-            }
-            return render(request, 'movie/movie_details.html', context)
-    return HttpResponseNotFound(f'Film nie został znaleziony')
+def movie_details(request, id):
+    found_movie = Movie.objects.get(pk=id)
+    if not found_movie:
+        return HttpResponseNotFound(f'Film nie został znaleziony')
+    context = {
+        'movie': found_movie
+    }
+    return render(request, 'movie/movie_details.html', context)
