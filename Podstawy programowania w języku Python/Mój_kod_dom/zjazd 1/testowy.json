@@ -1,0 +1,19 @@
+#przykładowy .JSON
+
+{
+  "id": 101,
+  "uzytkownik": "michalmlynarczyk123",
+  "czy_aktywny": true,
+  "punkty": 450,
+  "profile": {
+    "github": "https://github.com/michalmlynarczyk123",
+    "twitter": null
+  },
+  "jezyki_programowania": [
+    "Python",
+    "JavaScript",
+    "C++"
+  ],
+  "ostatnie_logowanie": "2026-03-15T11:40:00Z"
+}
+
